@@ -1,0 +1,191 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+/* COMMON */
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+}
+
+/* Texts */
+.white-text{
+    color: white;
+}
+.gray-text{
+    color: #5d5d5d;
+}
+.bold-text{
+    font-weight: 800;
+}
+.light-bold-text{
+    font-weight: 600;
+}
+.extra-small-text{
+    font-size: 14px;
+}
+.normal-text{
+    font-size: 17px;
+}
+.medium-text{
+    font-size: 20px;
+}
+
+/* Upgrade */
+.upgrade-bar{
+    height: 100px;
+    width: calc(100% - 230px);
+    float: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+/* MAIN */
+main{
+    width: 100%;
+    height: calc(100vh - 100px);
+
+    /* Test */
+    background-color: lightgray;
+}
+
+
+/* Main nav */
+.main-nav{
+    float: left;
+    width: 230px;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo */
+.big-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.big-logo img{
+    width: 80%;
+    height: 100px;
+}
+.small-logo{
+    display: none;
+}
+
+/* Action menu */
+.action-menu{
+    padding: 5px 0 25px;
+}
+.action-menu li{
+    margin-top: 15px;
+    padding-left: 20px;
+    font-weight: 600;
+}
+.action-menu i{
+    margin-right: 3px;
+}
+.left-active{
+    border-left: 3px solid #67991c;
+}
+.not-active{
+    border-left: 3px solid black; 
+}
+
+/* Playlists */
+.playlist-container{
+    flex-grow: 1;
+    overflow: hidden;
+    padding-left: 20px;
+}
+.create-playlist *{
+    display: inline-block;
+    margin: 20px 5px 20px 0;
+}
+.create-playlist i{
+    font-size: 30px;
+    vertical-align: middle;
+    color: #a3a3a3;
+}
+.playlist-container ul{
+    overflow-y: auto;
+    height: 70%;
+}
+.playlist-container li{
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* User */
+.user-container{
+    padding: 20px;
+}
+.install-app::after{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #2f2f2f;
+    margin: 10px 0;
+}
+.user-container .fa-user-circle{
+    font-size: 23px;
+    margin-right: 5px;
+}
+
+/* Main content */
+.main-content{
+    float: left;
+    width: calc(100% - 230px);
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    background-color: #141922;
+}
+
+
+
+/* MAIN MOBILE */
+@media screen and (max-width:600px) {
+    .main-nav{
+        width: 60px;
+    }
+    .main-content{
+        width: calc(100% - 60px);
+    }
+}
+
+
+
+/* FOOTER */
+footer{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    background-color: #282828;
+}
