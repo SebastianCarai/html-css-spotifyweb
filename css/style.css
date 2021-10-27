@@ -32,6 +32,9 @@ body{
 .gray-text{
     color: #5d5d5d;
 }
+.light-gray-text{
+    color: #787a7f;
+}
 .bold-text{
     font-weight: 800;
 }
@@ -45,19 +48,35 @@ body{
     font-size: 15px;
 }
 .medium-text{
-    font-size: 20px;
+    font-size: 18px;
+}
+.big-text{
+    font-size: 25px;
 }
 
 /* Upgrade */
 .upgrade-bar{
-    height: 100px;
+    height: 80px;
     width: calc(100% - 230px);
     float: right;
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     top: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.3);
 }
+.upgrade-btn{
+    margin-right: 15px;
+    padding: 13px 35px;
+    border: 1px solid white;
+    border-radius: 60px;
+}
+.upgrade-btn:hover{
+    transform: scale(1.1);
+}
+
 
 
 
@@ -67,7 +86,7 @@ body{
 /* MAIN */
 main{
     width: 100%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 80px);
 
     /* Test */
     background-color: lightgray;
@@ -131,10 +150,15 @@ main{
     display: inline-block;
     margin: 20px 5px 20px 0;
 }
-.create-playlist i{
+.create-playlist a::before{
+    display: inline-block;
+    content: "+";
+    padding: 1px 10px;
+    background-color: gray;  /* Plus Button */
+    margin-right: 5px;
+    color: black;
     font-size: 30px;
     vertical-align: middle;
-    color: #a3a3a3;
 }
 .playlist-container ul{
     overflow-y: auto;
@@ -150,9 +174,9 @@ main{
     padding: 20px;
 }
 .install-app i{
-    margin-right: 5px;
-    position: relative;
-    top: 0.5px;
+    margin-right: 3px;
+    display: inline-block;
+    vertical-align: middle;
 }
 .install-app::after{
     display: block;
@@ -176,26 +200,123 @@ main{
 .main-nav a:hover{
     color: white;
 }
+.create-playlist a:hover::before{
+    background-color: white;
+}
+
+
+
 
 /* Main content */
 .main-content{
     float: left;
     width: calc(100% - 230px);
-    height: calc(100vh - 100px);
+    height: 100%;
     overflow: hidden;
+    overflow-y: auto;
     background-color: #141922;
+    padding-top: 90px;
+}
+
+/* Main-content-menu */
+.content-menu-container ul{
+    margin: auto;
+    text-align: center;
+}
+.content-menu-container li{
+    display: inline-block;
+    margin: 1% 1%;
+}
+.content-menu-container a.bottom-active::after{
+    display: block;
+    content: "";
+    height: 2px;
+    width: 30%;
+    margin: 5px auto;
+    background-color: #6c9e29;
+}
+
+/* Recently played */
+.recently-played-container{
+    width: 95%;
+    margin: 35px auto;
+}
+.recent-albums{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+.album-box{
+    width: calc( (100% / 6) - 20px);
+    margin: 20px 10px 0;
+    text-align: center;
+    position: relative;
+}
+.recent-albums .album-name{
+    font-size: 15px;
+    margin: 8px 0 5px;
+}
+
+
+/* Main content effects */
+.content-menu-container a:hover{
+    color: white;
 }
 
 
 
-/* MAIN MOBILE */
+
+/* M */
+@media screen and (max-width:700px){
+    .album-box{
+        width: calc( (100% / 4) - 20px);
+    }
+}
+/* XS */
 @media screen and (max-width:600px) {
     .main-nav{
         width: 60px;
     }
+    .big-logo{
+        display: none;
+    }
+    .small-logo{
+        width: 60%;
+        display: inline-block;
+        margin: 5px  auto;
+    }
+    .action-menu{
+        flex-grow: 1;
+        padding: 0;
+    }
+    .action-menu-icon{
+        display: flex;
+        margin: 0 -8px;
+        width: 80%;
+    }
+    .left-active{
+        border-left-color: black;
+    }
+    .action-menu-name,
+    .playlist-container,
+    .profile-name,
+    .install-text,
+    .install-app::after{
+        display: none;
+    }
+    .profile-icon{
+        width: 35px;
+        position: relative;
+        right: 5px;
+    }
     .main-content{
         width: calc(100% - 60px);
     }
+    .upgrade-bar{
+        width: calc(100% - 60px);
+    }
+
 }
 
 
@@ -203,7 +324,7 @@ main{
 /* FOOTER */
 footer{
     width: 100%;
-    height: 100px;
+    height: 80px;
     overflow: hidden;
     background-color: #282828;
 }
